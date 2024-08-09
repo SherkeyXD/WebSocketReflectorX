@@ -57,6 +57,8 @@ Section "${APPNAME} (required)" SecDummy
   SectionIn RO
   SetOutPath "$INSTDIR"
   File /r "${APPNAME}\*"
+  File "${APPNAME}.ico"
+  Rename "$INSTDIR\${APPNAME}.ico" "$INSTDIR\icon.ico"
   
   ${GetSize} "$INSTDIR" "/S=0K" $0 $1 $2
   IntFmt $0 "0x%08X" $0
